@@ -36,11 +36,11 @@ function Start15Min(){
     hide("mainMenu");
     show("timer");
     show("backButton")
-    time1 = 900;
-    time2 = 900;
-    document.getElementById("timerTitle").innerHTML = "15 Minute Rounds";
-    document.getElementById("player1Time").innerHTML = "15:00";
-    document.getElementById("player2Time").innerHTML = "15:00";
+    time1 = 600;
+    time2 = 600;
+    document.getElementById("timerTitle").innerHTML = "10 Minute Rounds";
+    document.getElementById("player1Time").innerHTML = "10:00";
+    document.getElementById("player2Time").innerHTML = "10:00";
 }
 
 function Start20Min(){
@@ -151,5 +151,22 @@ function convertToTime(number){
         if(seconds < 10){
             Stringseconds = "0"+seconds.toString();
         }
+
+ 		var time = minutes.toString() + ":" + Stringseconds;
+ 		if(time == "0:00" && turn == 1){
+ 			document.getElementById("player1Time").innerHTML = "0:00";
+ 			alert("Time is up. Black wins!");
+ 			clearInterval(player1timer);
+        	clearInterval(player2timer);
+ 		}
+ 		if(time == "0:00" && turn == 2){
+ 			document.getElementById("player2Time").innerHTML = "0:00";
+ 			alert("Time is up. White wins!");
+ 			clearInterval(player1timer);
+        	clearInterval(player2timer);
+ 		}
+
         return minutes.toString() + ":" + Stringseconds;
 }
+
+
