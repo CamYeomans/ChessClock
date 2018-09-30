@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+    <head>
+
+        <meta charset="utf-8" />
+        <title>Chess Clock</title>
+
+        <link href="ChessClock.css" rel="stylesheet" />
+		<script type="text/javascript" src="ChessClock.js"></script>
+        
+
+    </head>
+
+    <body>
+        <div id="main">
+            <table id="mainMenu">
+                <tr><th colspan="2"><h1 id="header">Pick a Game Mode</h1></th></tr>
+                <tr>
+                    <td><button id="blitz" onclick="StartBlitz()">Blitz</button></td>
+                    <td><button id="15Min" onclick="Start15Min()">15 Minutes</button></td>
+                </tr>   
+                
+                <tr>
+                    <td><button id="20Min" onclick="Start20Min()">20 Minutes</button></td>
+                    <td><button id="30Min" onclick="Start30Min()">30 Minutes</button></td>
+                </tr>   
+            </table>
+
+            <div id ="timer" class="hidden">
+                <div id="playArea">
+                    <h1 id="timerTitle">Test</h1>
+                    <div id="player1Time"></div>
+                    <button id="startButton" onclick="StartGame()">Start</button>
+                    <div id="gameButtons" class="hidden">
+                        <button id="switchButton" onclick="Switch()">Switch</button>
+                        <button id="pauseButton"  onclick="Pause()">Pause</button>
+                    </div>
+                    <div id="player2Time"></div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div id="backButton" class="hidden">
+                <button onclick="GoBack()">&#8592; Back</button>
+        </div>
+    <footer>Created by Cameron Yeomans 2018</footer>
+    </body>
+
+
+    
+    </html>
